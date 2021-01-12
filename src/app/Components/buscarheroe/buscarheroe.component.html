@@ -1,0 +1,14 @@
+<h1>Buscando a: {{termino}}</h1>
+<hr>
+<div *ngIf="heroes.length!=0">
+
+
+
+    <div class="card-columns">
+        <app-heroe-tarjeta (heroeseleccionado)="verHeroe($event)" [item]="item" [idex]="i" *ngFor="let item of heroes; let i = index"></app-heroe-tarjeta>
+
+    </div>
+</div>
+<div *ngIf="heroes.length==0" class="alert alert-warning" role="alert">
+    No se encontraro Heroes con esos parametrosde busqueda
+</div>
